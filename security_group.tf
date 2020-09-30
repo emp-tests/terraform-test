@@ -31,3 +31,29 @@ resource "aws_security_group" "ingress_80_anywhere_22_restricted" {
     Application = var.tags_application
   }
 }
+
+resource "aws_security_group" "ingress_80_anywhere" {
+  name        = "unrestricted http"
+  description = "Allow 80 from anywhere"
+  vpc_id      = var.vpc_id
+
+  ingress {
+    description = "Unrestricted http traffic"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Environment = var.tags_environment
+    Application = var.tags_application
+  }
+}
