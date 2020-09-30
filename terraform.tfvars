@@ -3,5 +3,6 @@ sns_topic_name         = "emp-test-topic"
 sns_topic_display_name = "Test Topic"
 vpc_id                 = "vpc-ffd31e86"
 allow_ssh_cidr         = ["194.36.110.230/32"]
+asg_subnets            = ["subnet-639de539","subnet-9e6f51f8","subnet-c0f7f988"]
 tags_environment       = "Test"
 tags_application       = "Emp Test"

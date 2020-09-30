@@ -18,6 +18,10 @@ variable "allow_ssh_cidr" {
   type = list(string)
 }
 
+variable "asg_subnets" {
+  type = list(string)
+}
+
 variable "tags_environment" {
   type = string
 }
